@@ -1,0 +1,38 @@
+<html>
+<script>
+function showImg(num) {
+
+     document.querySelector('img').src = `image${num}.jpg`;
+     const buttonList = document.querySelectorAll('button');
+     buttonList.forEach(function(element, i) {
+         if (i == (num-1))         {
+             buttonList[i].classList.add("red");
+         } 
+         else {
+            buttonList[i].classList.remove("red");
+         }
+     });
+
+ }
+</script>
+<style>
+    .red {
+        background-color: red;
+    }
+</style>
+<body>
+
+  <button onclick = "showImg(1)">
+    Image 1
+  </button>
+  <button  onclick = "showImg(2)">
+    Image 2
+  </button>
+  <button onclick = "showImg(3)">
+    Image 3
+  </button>
+  <div>
+    <img>
+  </div>
+</body>
+</html>
